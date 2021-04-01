@@ -24,8 +24,8 @@ set(figure1,'Position',[232 100 Width Height],'PaperPositionMode','auto')
 
 subplot(2,2,1)
 plot(s0,sqrt(vol),'Color','b','LineWidth',width);
-% hold on 
-% plot(s0,smooth(s0,E_vol_share_begA,100),'Color','k','LineStyle',':','LineWidth',width)
+hold on 
+plot(s0,smooth(s0,E_vol_share_begA,100),'Color','k','LineStyle',':','LineWidth',width)
 ylabel('Aggregate volatility');
 xlabel('Share of tree A');
 title('(A) Aggregate volatility');

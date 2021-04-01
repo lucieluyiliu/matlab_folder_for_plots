@@ -73,28 +73,24 @@ title('(D) Leverage ratio of tree A');
 
 
 %%equity premium and vol
-
 ERP=max(E_premium_share_beg,0);
-figure2=figure
-Height = 500;
-Width = 600;
-set(figure2,'Position',[232 100 Width Height],'PaperPositionMode','auto')
+figure
 subplot(1,2,1)
-plot(sfeq,smooth(E_premium_share_beg*10000,10),'Color','k','LineStyle',':','LineWidth',width);
+plot(sfeq,smooth(E_premium_share_beg,10),'Color','k','LineStyle',':','LineWidth',width);
 %plot(s0,  smooth(s0,ERP_A,100),'Color','k','LineStyle',':','LineWidth',width);
 hold on 
-plot(sfeq,rexcess*10000,'Color','b','LineWidth',width);
+plot(sfeq,Er,'Color','b','LineWidth',width);
 hold on 
-plot(sfeq,rfeq*10000,'Color','m','LineWidth',width);
+plot(sfeq,rfeq,'Color','m','LineWidth',width);
 legend({'equity risk premium','asset risk premium','rf'});
-ylabel('rates(bps)')
+
 hold on 
-ylim([0,500]);
+ylim([100,450]);
 subplot(1,2,2)
-plot(sfeq,smooth(E_vol_share_beg,40),'Color','k','LineStyle',':','LineWidth',width);
+plot(plot(sfeq,smooth(E_vol_share_beg,10),'Color','k','LineStyle',':','LineWidth',width));
 hold on 
-plot(sfeq,sqrt(voleq),'Color','b','LineWidth',width);
-legend({'equity volatility','asset volatility'});
+plot(sfeq,voleq,'Color','b','LineWidth',width);
+
 
 
 %% tree B 
